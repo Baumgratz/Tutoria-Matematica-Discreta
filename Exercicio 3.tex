@@ -1,0 +1,85 @@
+\documentclass[aspectratio=43]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+%\usepackage{tikz}
+\usepackage{graphics,amssymb,amsfonts,amsmath}
+%\usepackage{amstext}
+%\usepackage{amssymb}
+%\usepackage{stmaryrd}
+%\usepackage{fullpage}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{proof}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{setspace}
+\usepackage{color}
+
+
+\usetheme{CambridgeUS}
+% \usetheme{Pittsburgh}
+\usecolortheme{beaver}
+\usefonttheme[onlymath]{serif}
+\beamertemplatenavigationsymbolsempty
+
+% Colocando numero de paginas no slide
+%\setbeamertemplate{footline}[frame number]
+
+\newcommand{\ria}{$\rightarrow$}
+\newcommand{\Ria}{$\Rightarrow$}
+\newcommand{\fall}{$\forall$}
+\newcommand{\ex}{$\exists$}
+\newcommand{\nao}{$\neg$}
+\newcommand{\nex}{\nao\ex}
+\newcommand{\nfall}{\nao\fall}
+\newcommand{\andd}{$\wedge$}
+\newcommand{\orr}{$\vee$}
+\newcommand{\gam}{$\Gamma$}
+
+\title[\sc{Resolu\c c\~ao}]{Resolu\c c\~ao 3.9}
+\author[Guilherme Baumgratz Figueiroa]{Guilherme Baumgratz Figueiroa}
+\institute[UFOP]{Universidade Federal de Ouro Preto} % opcional
+\date{}
+
+\begin{document}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	\section{Exercic\'io}
+	
+	\begin{frame}%\frametitle{Exercic\'io}
+		1.Prove os seguintes sequentes usando dedu\c c\~ao natural:
+				
+	\end{frame}
+	
+	\begin{frame}[fragile]
+    
+    	\begin{enumerate}[b)]
+			
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x. P(x)\andd\ Q(x) \\ 
+			
+		\end{enumerate}
+        
+		\[
+        \begin{array}{c}
+		\infer[_{(Contr)}]
+			{$\nex$ x.P(x) $\andd$ Q(x)}
+			{\infer[_{(And-I)}] 
+            	{\bot}
+                {\infer[_{(And-E)}] 
+                	{Q(b)}
+                    {\infer[_{(Exi-E)}]
+                    	{P(b)\andd\ Q( }
+                        {}
+                    }
+                \hspace{35pt} $\nao$ Q(b)}
+            }
+		\end{array}
+        \]
+		
+	\end{frame}
+	
+\end{document}
+
