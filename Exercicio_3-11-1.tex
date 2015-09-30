@@ -1,0 +1,74 @@
+\documentclass[aspectratio=43]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+%\usepackage{tikz}
+%\usepackage{graphics,amssymb,amsfonts,amsmath}
+%\usepackage{amstext}
+%\usepackage{amssymb}
+%\usepackage{stmaryrd}
+%\usepackage{fullpage}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{proof}
+\usepackage{color}
+
+\usetheme{CambridgeUS}
+% \usetheme{Pittsburgh}
+\usecolortheme{beaver}
+\usefonttheme[onlymath]{serif}
+\beamertemplatenavigationsymbolsempty
+
+% Colocando numero de paginas no slide
+%\setbeamertemplate{footline}[frame number]
+
+\newcommand{\ria}{$\rightarrow$}
+\newcommand{\fall}{$\forall$}
+\newcommand{\ex}{$\exists$}
+\newcommand{\nao}{$\neg$}
+\newcommand{\nex}{\nao\ex}
+\newcommand{\nfall}{\nao\fall}
+\newcommand{\andd}{$\wedge$}
+\newcommand{\orr}{$\vee$}
+\newcommand{\gam}{$\Gamma$}
+
+\title[\sc{Resolu\c c\~ao}]{Resolu\c c\~ao 3.11-a}
+\author[Guilherme Baumgratz Figueiroa]{Guilherme Baumgratz Figueiroa}
+\institute[UFOP]{Universidade Federal de Ouro Preto} % opcional
+\date{}
+
+\begin{document}
+	
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\section{Exercic\'io}
+
+\begin{frame}%\frametitle{Exercic\'io}
+	1.Prove as seguintes equival\^encias utilizando regras alg\'ebricas para l\'ogica de predicado
+	\begin{enumerate}[a)]
+		
+		\item \fall P(x)\ria\nao Q(x) = \nex x.(P(x)\ \andd\ Q(x)) \\
+		
+	\end{enumerate}
+	
+	Resposta:
+	\\
+	\centering
+	\pause
+	
+	\begin{tabular}{rcl}
+		\fall P(x)\ria\nao Q(x) & = & \nex x.(P(x)\ \andd\ Q(x))\\
+		\pause
+		\nao \nao \fall P(x)\orr\nao Q(x) & = & \nex x.(P(x)\ \andd\ Q(x)) \\
+		\pause
+		\nex x.\nao (\nao P(x)\orr\nao Q(x)) & = & \nex x.(P(x)\ \andd\ Q(x)) \\
+		\pause
+		\nex x. P(x) \andd\ Q(x) & = & \nex x.(P(x)\ \andd\ Q(x)) 
+	\end{tabular}
+	
+	
+\end{frame}
+
+
+\end{document}
