@@ -1,0 +1,92 @@
+\documentclass[aspectratio=43]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{tikz}
+
+\usetheme{CambridgeUS}
+% \usetheme{Pittsburgh}
+\usecolortheme{beaver}
+\usefonttheme[onlymath]{serif}
+\beamertemplatenavigationsymbolsempty
+
+% Colocando numero de paginas no slide
+%\setbeamertemplate{footline}[frame number]
+
+\newcommand{\ria}{$\rightarrow$}
+\newcommand{\fall}{$\forall$}
+\newcommand{\ex}{$\exists$}
+\newcommand{\nao}{$\neg$}
+\newcommand{\nex}{\nao\ex}
+\newcommand{\nfall}{\nao\fall}
+%\newcommand{\and}{\wedge}
+%\newcommand{\or}{\vee}
+
+\title[\sc{Resolu\c c\~ao}]{Resolu\c c\~ao 3.3.3}
+\author[Guilherme Baumgratz Figueiroa]{Guilherme Baumgratz Figueiroa}
+\institute[UFOP]{Universidade Federal de Ouro Preto} % opcional
+\date{}
+
+\begin{document}
+	
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\section{Exercic\'io}
+
+\begin{frame}%\frametitle{Exercic\'io}
+	3.Considerando como universo de discurso o conjunto de alunos e professores de uma universidade e os seguintes predicados:
+	\begin{table}[h]
+		\begin{tabular}{|c|c|}
+			{\em A(x, y)} & {\em x} admira {\em y} \\
+			{\em S(x, y)} & {\em x} estava presente em {\em y} \\
+			{\em P(x)} & {\em x} \'e professor \\ 
+			{\em E(x)} & {\em x} \'e estudante \\
+			{\em L(x)} & {\em x} \'e aula \\
+		\end{tabular}
+	\end{table}
+	e a constante {\em Maria}, representa as seguintes sentenças como fórmulas da lógica de predicados.
+	
+\end{frame}
+
+\begin{frame}
+	\begin{enumerate}[a)]
+		
+		\item Maria admira todo professor \\
+		\pause
+		Resposta: {\em \fall x.P(x) \ria A(Maria, x)} \\
+		\pause
+		
+		\item Algum professor admira Maria \\
+		\pause
+		Resposta: {\em \ex x.P(x) \ria A(x, Maria)} \\
+		\pause
+		
+		\item Maria admira a si mesma \\
+		\pause
+		Resposta: {\em A(Maria, Maria)} \\
+				
+	\end{enumerate}
+		
+\end{frame}
+
+\begin{frame}
+	\begin{enumerate}[d)]
+		\item Nenhum estudante estava presente em todas as aulas \\
+		\pause
+		Resposta: {\em \nao\ex x.E(x).\fall y.L(y).S(x, y)} \\
+		\pause
+		
+		\item Nenhuma aula teve a presen\c ca de todos os estudantes \\
+		\pause
+		Resposta:  {\em \nex x.L(x).\fall y.E(y).S(y, x)}
+		\pause
+		
+		\item Nenhuma aula teve a presen\c ca de qualquer estudantes \\
+		\pause
+		Resposta:  {\em \nex x.L(x).\nex y.E(y).S(y, x)}
+	\end{enumerate}
+\end{frame}
+	
+\end{document}
