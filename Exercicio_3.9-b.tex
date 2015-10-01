@@ -85,12 +85,12 @@
 			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x.P(x)\ \andd\ Q(x) \\ 
 			
 		\end{enumerate}
-        \textcolor{orange}{\{\nex  x. P(x)\ \andd\ Q(x)\}}
+        \textcolor{red}{\{\nex  x. P(x)\ \andd\ Q(x)\}}
         \vspace{95pt}
         \[
         \begin{array}{c}
 		
-        	\infer[_{(Contr)}]
+        	\infer[_{(\textcolor{red}{Contr})}]
             {$\nex$  x. P(x)\ $\andd$\ Q(x)}
             {\textcolor{red}{\bot}}
         
@@ -113,9 +113,9 @@
 		
         	\infer[_{(Contr)}]
             {$\nex$  x. P(x)\ $\andd$\ Q(x)}
-            {\infer[_{(And-I)}] 
+            {\infer[_{(\textcolor{red}{\land-I})}] 
             	{\bot}
-                { \textcolor{blue}{ Q(b) \hspace{35pt} \neg Q(b)}}
+                { \textcolor{red}{ Q(b) \hspace{35pt} \neg Q(b)}}
         	}
 		\end{array}
         \]
@@ -140,11 +140,11 @@
             	{\bot}
                 {\infer[_{()}]
                 	{Q(b)}
-                    {\textcolor{green}{I}}
+                    {\textcolor{red}{I}}
                 \hspace{35pt} 
                 \infer[_{()}]
                 	{$\nao$Q(b)}
-                    {\textcolor{green}{II}}
+                    {\textcolor{red}{II}}
                 }
         	}
 		\end{array}
@@ -166,7 +166,7 @@
         \[
         \begin{array}{c}
 		
-        	\textcolor{green}{
+        	\textcolor{red}{
             \infer[_{()}]
             {Q(b)}
             {}
@@ -188,7 +188,7 @@
         \[
         \begin{array}{c}
 		
-        	\infer[_{(And-E)}]
+        	\infer[_{(\textcolor{red}{\land-E})}]
             {Q(b)}
             {\textcolor{red}{P(b)\ \wedge \ Q(b)}}
 		\end{array}
@@ -208,9 +208,9 @@
         \[
         \begin{array}{c}
 		
-        	\infer[_{(And-E)}]
+        	\infer[_{(\land-E)}]
             {Q(b)}
-            {\infer[_{(Exist-E)}]
+            {\infer[_{(\textcolor{red}{\exists-E})}]
                 {P(b)\ $\andd$\ Q(b)}
             	{\textcolor{red}{\exists x.P(x)\ \wedge\ Q(x)}}
             }
@@ -233,7 +233,7 @@
         \[
         \begin{array}{c}
 		
-        	\textcolor{green}{
+        	\textcolor{red}{
             \infer[_{()}]
             {$\nao$ Q(b)}
             {}
@@ -255,7 +255,7 @@
         \[
         \begin{array}{c}
 		
-        	\infer[_{(Imp-E)}]
+        	\infer[_{(\textcolor{red}{\to-E})}]
             {$\nao$ Q(b)}
             {\textcolor{red}{
             P(b) \rightarrow \neg Q(b) 
@@ -280,9 +280,9 @@
         \[
         \begin{array}{c}
 		
-        	\infer[_{(Imp-E)}]
+        	\infer[_{(\to-E)}]
             {$\nao$ Q(b)}
-            {\infer[_{(All-E)}] 
+            {\infer[_{(\textcolor{red}{\forall-E})}] 
             	{P(b) $\ria$ $\nao$ Q(b)}
                	{\textcolor{red}{\forall x.P(x)\rightarrow \neg Q(x)}} 
             P(b)
@@ -304,12 +304,12 @@
         \[
         \begin{array}{c}
 		
-        	\infer[_{(Imp-E)}]
+        	\infer[_{(\to-E)}]
             {$\nao$ Q(b)}
-            {\infer[_{(All-E)}] 
+            {\infer[_{(\forall-E)}] 
             	{P(b) $\ria$ $\nao$ Q(b)}
                	{$\fall$x.P(x)$\ria$ $\nao$ Q(x)} 
-            \infer[_{(And-E)}] 
+            \infer[_{(\textcolor{red}{\land-E})}] 
                 {P(b)} 
                 {\textcolor{red}{P(b)\ \wedge\ Q(b)}}
             }
@@ -330,14 +330,14 @@
         \[
         \begin{array}{c}
 		
-        	\infer[_{(Imp-E)}]
+        	\infer[_{(\to-E)}]
             {$\nao$ Q(b)}
-            {\infer[_{(All-E)}] 
+            {\infer[_{(\forall-E)}] 
             	{P(b) $\ria$ $\nao$ Q(b)}
                	{$\fall$x.P(x)$\ria$ $\nao$ Q(x)} 
-            \infer[_{(And-E)}] 
+            \infer[_{(\land-E)}] 
                 {P(b)} 
-                {\infer[_{(Exist-E)}] 
+                {\infer[_{(\textcolor{red}{\exists-E})}] 
                         	{P(b)\ $\andd$\ Q(b)}
                         	{\textcolor{red}{\exists x.P(x)\ \wedge\ Q(x)}}
                 }
@@ -361,22 +361,22 @@
         \begin{array}{c}
 		\infer[_{(C)}]
 			{$\nex$ x.P(x)\ $\andd$\ Q(x)}
-			{\infer[_{(An-I)}] 
+			{\infer[_{(\land-I)}] 
             	{\bot}
-                {\infer[_{(An-E)}] 
+                {\infer[_{(\land-E)}] 
                 	{Q(b)}
-                    {\infer[_{(E-E)}]
+                    {\infer[_{(\exists-E)}]
                     	{P(b)\ $\andd$\ Q(b)}
                         {$\ex$x.P(x)\ $\andd$\ Q(x)}
                     }
-                \infer[_{(I-E)}] 
+                \infer[_{(\to-E)}] 
                 	{$\nao$ Q(b)}
-                	{\infer[_{(Al-E)}] 
+                	{\infer[_{(\forall-E)}] 
                     	{P(b) $\ria$ $\nao$ Q(b)}
                     	{$\fall$x.P(x)$\ria$ $\nao$ Q(x)}
-                    \infer[_{(An-E)}] 
+                    \infer[_{(\land-E)}] 
                     	{P(b)}
-                        {\infer[_{(E-E)}] 
+                        {\infer[_{(\exists-E)}] 
                         	{P(b)\ $\andd$\ Q(b)}
                         	{$\ex$x.P(x)\ $\andd$\ Q(x)}
                         }
