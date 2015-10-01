@@ -62,7 +62,7 @@
     	
     	\begin{enumerate}[b)]
 			
-			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x. P(x)\ \andd\ Q(x) \\ 
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x.P(x)\ \andd\ Q(x) \\ 
 			
 		\end{enumerate}
         \vspace{100pt}
@@ -82,16 +82,16 @@
     	
     	\begin{enumerate}[b)]
 			
-			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x. P(x)\ \andd\ Q(x) \\ 
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x.P(x)\ \andd\ Q(x) \\ 
 			
 		\end{enumerate}
         \vspace{95pt}
         \[
         \begin{array}{c}
 		
-        	\infer[_{(Contr)}]
+        	\infer[_{\textcolor{red}{(Contr)}}]
             {$\nex$  x. P(x)\ $\andd$\ Q(x)}
-            {\bot}
+            {\textcolor{red}{\bot}}
         
 		\end{array}
         \]
@@ -102,7 +102,7 @@
     	
     	\begin{enumerate}[b)]
 			
-			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x. P(x)\ \andd\ Q(x) \\ 
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x.P(x)\ \andd\ Q(x) \\ 
 			
 		\end{enumerate}
         \vspace{95pt}
@@ -111,9 +111,9 @@
 		
         	\infer[_{(Contr)}]
             {$\nex$  x. P(x)\ $\andd$\ Q(x)}
-            {\infer[_{(And-I)}] 
+            {\infer[_{\textcolor{red}{(And-I)}}] 
             	{\bot}
-                {Q(b) \hspace{35pt} $\nao$ Q(b)}
+                { \textcolor{red}{ Q(b) \hspace{35pt} \neg Q(b)}}
         	}
 		\end{array}
         \]
@@ -124,7 +124,7 @@
     	
     	\begin{enumerate}[b)]
 			
-			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x. P(x)\ \andd\ Q(x) \\ 
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x.P(x)\ \andd\ Q(x) \\ 
 			
 		\end{enumerate}
         \vspace{100pt}
@@ -137,11 +137,11 @@
             	{\bot}
                 {\infer[_{()}]
                 	{Q(b)}
-                    {I}
+                    {\textcolor{red}{I}}
                 \hspace{35pt} 
                 \infer[_{()}]
                 	{$\nao$Q(b)}
-                    {II}
+                    {\textcolor{red}{II}}
                 }
         	}
 		\end{array}
@@ -155,16 +155,18 @@
     	
     	\begin{enumerate}[b)]
 			
-			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x. P(x)\ \andd\ Q(x) \\ 
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x.P(x)\ \andd\ Q(x) \\ 
 			
 		\end{enumerate}
         \vspace{100pt}
         \[
         \begin{array}{c}
 		
-        	\infer[_{()}]
+        	\textcolor{red}{
+            \infer[_{()}]
             {Q(b)}
             {}
+            }
 		\end{array}
         \]
         
@@ -174,7 +176,7 @@
     	
     	\begin{enumerate}[b)]
 			
-			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x. P(x)\ \andd\ Q(x) \\ 
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x.P(x)\ \andd\ Q(x) \\ 
 			
 		\end{enumerate}
         \vspace{95pt}
@@ -183,7 +185,7 @@
 		
         	\infer[_{(And-E)}]
             {Q(b)}
-            {P(b)\ $\andd$\ Q(b)}
+            {\textcolor{red}{P(b)\ \wedge \ Q(b)}}
 		\end{array}
         \]
         
@@ -193,7 +195,7 @@
     	
     	\begin{enumerate}[b)]
 			
-			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x. P(x)\ \andd\ Q(x) \\ 
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x.P(x)\ \andd\ Q(x) \\ 
 			
 		\end{enumerate}
         \vspace{90pt}
@@ -204,7 +206,7 @@
             {Q(b)}
             {\infer[_{(Exist-E)}]
                 {P(b)\ $\andd$\ Q(b)}
-            	{$\ex$x.P(x)\ $\andd$\ Q(x)}
+            	{\textcolor{red}{\exists x.P(x)\ \wedge\ Q(x)}}
             }
 		\end{array}
         \]
@@ -217,16 +219,18 @@
     	
     	\begin{enumerate}[b)]
 			
-			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x. P(x)\ \andd\ Q(x) \\ 
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x.P(x)\ \andd\ Q(x) \\ 
 			
 		\end{enumerate}
         \vspace{100pt}
         \[
         \begin{array}{c}
 		
-        	\infer[_{()}]
+        	\textcolor{red}{
+            \infer[_{()}]
             {$\nao$ Q(b)}
             {}
+            }
 		\end{array}
         \]
         
@@ -236,7 +240,7 @@
     	
     	\begin{enumerate}[b)]
 			
-			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x. P(x)\ \andd\ Q(x) \\ 
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex x.P(x)\ \andd\ Q(x) \\ 
 			
 		\end{enumerate}
         \vspace{95pt}
@@ -245,9 +249,12 @@
 		
         	\infer[_{(Imp-E)}]
             {$\nao$ Q(b)}
-            {P(b) $\ria$ $\nao$ Q(b) 
+            {\textcolor{red}{
+            P(b) \rightarrow \neg Q(b) 
             \hspace{35pt}
-            P(b)}
+            P(b)
+            }
+            }
 		\end{array}
         \]
         
@@ -257,7 +264,7 @@
     	
     	\begin{enumerate}[b)]
 			
-			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x. P(x)\ \andd\ Q(x) \\ 
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x.P(x)\ \andd\ Q(x) \\ 
 			
 		\end{enumerate}
         \vspace{90pt}
@@ -268,7 +275,7 @@
             {$\nao$ Q(b)}
             {\infer[_{(All-E)}] 
             	{P(b) $\ria$ $\nao$ Q(b)}
-               	{$\fall$x.P(x)$\ria$ $\nao$ Q(x)} 
+               	{\textcolor{red}{\forall x.P(x)\rightarrow \neg Q(x)}} 
             P(b)
             }
 		\end{array}
@@ -280,7 +287,7 @@
     	
     	\begin{enumerate}[b)]
 			
-			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x. P(x)\ \andd\ Q(x) \\ 
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x.P(x)\ \andd\ Q(x) \\ 
 			
 		\end{enumerate}
         \vspace{90pt}
@@ -294,7 +301,7 @@
                	{$\fall$x.P(x)$\ria$ $\nao$ Q(x)} 
             \infer[_{(And-E)}] 
                 {P(b)} 
-                {P(b)\ $\andd$\ Q(b)}
+                {\textcolor{red}{P(b)\ \wedge\ Q(b)}}
             }
 		\end{array}
         \]
@@ -305,7 +312,7 @@
     	
     	\begin{enumerate}[b)]
 			
-			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x. P(x)\ \andd\ Q(x) \\ 
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x.P(x)\ \andd\ Q(x) \\ 
 			
 		\end{enumerate}
         \vspace{90pt}
@@ -321,7 +328,7 @@
                 {P(b)} 
                 {\infer[_{(Exist-E)}] 
                         	{P(b)\ $\andd$\ Q(b)}
-                        	{$\ex$x.P(x)\ $\andd$\ Q(x)}
+                        	{\textcolor{red}{\exists x.P(x)\ \wedge\ Q(x)}}
                 }
             }
 		\end{array}
@@ -335,7 +342,7 @@
     
     	\begin{enumerate}[b)]
 			
-			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x. P(x)\ \andd\ Q(x) \\ 
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x.P(x)\ \andd\ Q(x) \\ 
 			
 		\end{enumerate}
         \vspace{50pt}
