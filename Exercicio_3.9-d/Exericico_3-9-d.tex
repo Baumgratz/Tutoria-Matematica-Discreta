@@ -1,0 +1,483 @@
+\documentclass[aspectratio=43]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+%\usepackage{tikz}
+\usepackage{graphics,amssymb,amsfonts,amsmath}
+%\usepackage{amstext}
+%\usepackage{amssymb}
+%\usepackage{stmaryrd}
+%\usepackage{fullpage}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{proof}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{setspace}
+\usepackage{color}
+
+
+\usetheme{CambridgeUS}
+% \usetheme{Pittsburgh}
+\usecolortheme{beaver}
+\usefonttheme[onlymath]{serif}
+\beamertemplatenavigationsymbolsempty
+
+% Colocando numero de paginas no slide
+%\setbeamertemplate{footline}[frame number]
+
+\newcommand{\ria}{$\rightarrow$}
+\newcommand{\Ria}{$\Rightarrow$}
+\newcommand{\fall}{$\forall$}
+\newcommand{\ex}{$\exists$}
+\newcommand{\nao}{$\neg$}
+\newcommand{\nex}{\nao\ex}
+\newcommand{\nfall}{\nao\fall}
+\newcommand{\andd}{$\wedge$}
+\newcommand{\orr}{$\vee$}
+\newcommand{\gam}{$\Gamma$}
+
+\title[\sc{Resolu\c c\~ao}]{Resolu\c c\~ao 3.9}
+\author[Guilherme Baumgratz Figueiroa]{Guilherme Baumgratz Figueiroa}
+\institute[UFOP]{Universidade Federal de Ouro Preto} % opcional
+\date{}
+
+\begin{document}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	\section{Exercic\'io 9}
+	
+	\begin{frame}%\frametitle{Exercic\'io}
+    
+    	\begin{enumerate}[1.]
+			\item Prove os seguintes sequentes usando dedu\c c\~ao natural: \\
+		\end{enumerate}
+				
+	\end{frame}
+    \subsection{d)}
+    
+    \begin{frame}[fragile]
+    
+    	\begin{enumerate}[d)]
+			\item $\{$ \ex x.P(x)\ria \nao Q(x), \fall x.P(x)\ria R(x) $\}$ $\vdash$ \ex x.R(x)\ \andd\ Q(x) \\
+		\end{enumerate}
+        
+        \vspace{80pt}
+        
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{}]
+            	{\exists  x. R(x)\ \land\ Q(x)}
+            	{}
+        
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    \begin{frame}[fragile]
+    
+    	\begin{enumerate}[d)]
+			\item $\{$ \ex x.P(x)\ria \nao Q(x), \fall x.P(x)\ria R(x) $\}$ $\vdash$ \ex x.R(x)\ \andd\ Q(x) \\
+		\end{enumerate}
+        
+        \vspace{80pt}
+        
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{(\textcolor{red}{\exists -I})}]
+            	{\exists  x. R(x)\ \land\ Q(x)}
+            	{\textcolor{red}{R(\alpha)\ \land\ Q(\alpha)}}
+        
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    \begin{frame}[fragile]
+    
+    	\begin{enumerate}[d)]
+			\item $\{$ \ex x.P(x)\ria \nao Q(x), \fall x.P(x)\ria R(x) $\}$ $\vdash$ \ex x.R(x)\ \andd\ Q(x) \\
+		\end{enumerate}
+        
+        \vspace{80pt}
+        
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{(\exists -I)}]
+            	{\exists  x. R(x)\ \land\ Q(x)}
+            	{\infer[_{(\textcolor{red}{\land -I})}] 
+                	{R(\alpha)\ \land\ Q(\alpha)}
+                	{\textcolor{red}{R(\alpha) \hspace{35pt} Q(\alpha)}}
+                }
+        
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    \begin{frame}[fragile]
+    
+    	\begin{enumerate}[d)]
+			\item $\{$ \ex x.P(x)\ria \nao Q(x), \fall x.P(x)\ria R(x) $\}$ $\vdash$ \ex x.R(x)\ \andd\ Q(x) \\
+		\end{enumerate}
+        
+        \vspace{80pt}
+        
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{(\exists -I)}]
+            	{\exists  x. R(x)\ \land\ Q(x)}
+            	{\infer[_{(\land -I)}] 
+                	{R(\alpha)\ \land\ Q(\alpha)}
+                	{\infer[] 
+                    	{R(\alpha)} 
+                        {\textcolor{red}{I}} \hspace{35pt}
+                     \infer[] 
+                     	{Q(\alpha)}
+                     	{\textcolor{red}{II}}
+                    }
+                }
+        
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    \subsection{d) I}
+    
+    \begin{frame}[fragile]
+    
+    	\begin{enumerate}[d)]
+			\item $\{$ \ex x.P(x)\ria \nao Q(x), \fall x.P(x)\ria R(x) $\}$ $\vdash$ \ex x.R(x)\ \andd\ Q(x) \\
+		\end{enumerate}
+        
+        \vspace{80pt}
+        
+        \[
+        \begin{array}{c}
+		
+        	\textcolor{red}{
+            \infer[_{}]
+            	{R(\alpha)}
+            	{}
+        	}
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    \begin{frame}[fragile]
+    
+    	\begin{enumerate}[d)]
+			\item $\{$ \ex x.P(x)\ria \nao Q(x), \fall x.P(x)\ria R(x) $\}$ $\vdash$ \ex x.R(x)\ \andd\ Q(x) \\
+		\end{enumerate}
+        
+        \vspace{75pt}
+        
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{(\textcolor{red}{\to -I})}]
+            	{R(\alpha)}
+            	{\textcolor{red}{P(\alpha) \rightarrow R(\alpha)} \hspace{35pt} \textcolor{red}{P(\alpha)}}
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    
+    
+     \begin{frame}[fragile]
+    
+    	\begin{enumerate}[d)]
+			\item $\{$ \ex x.P(x)\ria \nao Q(x), \fall x.P(x)\ria R(x) $\}$ $\vdash$ \ex x.R(x)\ \andd\ Q(x) \\
+		\end{enumerate}
+        
+        \vspace{70pt}
+        
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{(\to -I)}]
+            	{R(\alpha)}
+            	{\infer[_{(\textcolor{red}{\forall -E})}]
+                	{P(\alpha) \rightarrow R(\alpha)} 
+                    {\textcolor{red}{\forall x.P(x)\to R(x)}} 
+            	\hspace{35pt}
+                P(\alpha)
+                }
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    \begin{frame}[fragile]
+    
+    	\begin{enumerate}[d)]
+			\item $\{$ \ex x.P(x)\ria \nao Q(x), \fall x.P(x)\ria R(x) $\}$ $\vdash$ \ex x.R(x)\ \andd\ Q(x) \\
+		\end{enumerate}
+        
+        \vspace{70pt}
+        
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{(\to -I)}]
+            	{R(\alpha)}
+            	{\infer[_{(\forall -E)}]
+                	{P(\alpha) \rightarrow R(\alpha)} 
+                    {\infer[_{(\textcolor{red}{ID})}]
+                    	{\forall x.P(x)\to R(x)}
+                    	{}
+                    } 
+            	\hspace{35pt}
+                P(\alpha)
+                }
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    \begin{frame}[fragile]
+    
+    	\begin{enumerate}[d)]
+			\item $\{$ \ex x.P(x)\ria \nao Q(x), \fall x.P(x)\ria R(x) $\}$ $\vdash$ \ex x.R(x)\ \andd\ Q(x) \\
+		\end{enumerate}
+        
+        \vspace{70pt}
+        
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{(\to -I)}]
+            	{R(\alpha)}
+            	{\infer[_{(\forall -E)}]
+                	{P(\alpha) \rightarrow R(\alpha)} 
+                    {\infer[_{(ID)}]
+                    	{\forall x.P(x)\to R(x)}
+                    	{}
+                    }  
+            	\hspace{35pt}
+                \infer[_{(\textcolor{red}{\land -E})}] 
+                	{P(\alpha)}
+                    {\textcolor{red}{P(\alpha)\ \land \ Q(\alpha)}}
+                }
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    \begin{frame}[fragile]
+    
+    	\begin{enumerate}[d)]
+			\item $\{$ \ex x.P(x)\ria \nao Q(x), \fall x.P(x)\ria R(x) $\}$ $\vdash$ \ex x.R(x)\ \andd\ Q(x) \\
+		\end{enumerate}
+        
+        \vspace{65pt}
+        
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{(\to -I)}]
+            	{R(\alpha)}
+            	{\infer[_{(\forall -E)}]
+                	{P(\alpha) \rightarrow R(\alpha)} 
+                    {\infer[_{(ID)}]
+                    	{\forall x.P(x)\to R(x)}
+                    	{}
+                    }  
+            	\hspace{35pt}
+                \infer[_{(\land -E)}] 
+                	{P(\alpha)}
+                    {\infer[_{(\textcolor{red}{\exists -E})}]
+                    	{P(\alpha)\ \land \ Q(\alpha)}
+                    	{\textcolor{red}{\exists x.P(x)\ \land \ Q(\alpha)}}
+                    }
+                }
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    \begin{frame}[fragile]
+    
+    	\begin{enumerate}[d)]
+			\item $\{$ \ex x.P(x)\ria \nao Q(x), \fall x.P(x)\ria R(x) $\}$ $\vdash$ \ex x.R(x)\ \andd\ Q(x) \\
+		\end{enumerate}
+        
+        \vspace{65pt}
+        
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{(\to -I)}]
+            	{R(\alpha)}
+            	{\infer[_{(\forall -E)}]
+                	{P(\alpha) \rightarrow R(\alpha)} 
+                    {\infer[_{(ID)}]
+                    	{\forall x.P(x)\to R(x)}
+                    	{}
+                    }  
+            	\hspace{35pt}
+                \infer[_{(\land -E)}] 
+                	{P(\alpha)}
+                    {\infer[_{(\exists -E)}]
+                    	{P(\alpha)\ \land \ Q(\alpha)}
+                    	{\infer[_{(\textcolor{red}{ID})}]
+                        	{\exists x.P(x)\ \land \ Q(\alpha)}
+                            {}
+                        }
+                    }
+                }
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    \subsection{d) II}
+    
+    \begin{frame}[fragile]
+    
+    	\begin{enumerate}[d)]
+			\item $\{$ \ex x.P(x)\ria \nao Q(x), \fall x.P(x)\ria R(x) $\}$ $\vdash$ \ex x.R(x)\ \andd\ Q(x) \\
+		\end{enumerate}
+        
+        \vspace{75pt}
+        
+        \[
+        \begin{array}{c}
+		
+        	\textcolor{red}{
+            \infer[_{}]
+            	{Q(\alpha)}
+            	{}
+        	}
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    \begin{frame}[fragile]
+    
+    	\begin{enumerate}[d)]
+			\item $\{$ \ex x.P(x)\ria \nao Q(x), \fall x.P(x)\ria R(x) $\}$ $\vdash$ \ex x.R(x)\ \andd\ Q(x) \\
+		\end{enumerate}
+        
+        \vspace{70pt}
+        
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{(\textcolor{red}{\land -E})}] 
+                	{Q(\alpha)}
+                    {\textcolor{red}{P(\alpha)\ \land \ Q(\alpha)}}
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    \begin{frame}[fragile]
+    
+    	\begin{enumerate}[d)]
+			\item $\{$ \ex x.P(x)\ria \nao Q(x), \fall x.P(x)\ria R(x) $\}$ $\vdash$ \ex x.R(x)\ \andd\ Q(x) \\
+		\end{enumerate}
+        
+        \vspace{80pt}
+        
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{(\land -E)}] 
+                	{Q(\alpha)}
+                    {\infer[_{(\textcolor{red}{\exists -E})}]
+                    	{P(\alpha)\ \land \ Q(\alpha)}
+                    	{\textcolor{red}{\exists x.P(x)\ \land \ Q(\alpha)}}
+                    }
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    \begin{frame}[fragile]
+    
+    	\begin{enumerate}[d)]
+			\item $\{$ \ex x.P(x)\ria \nao Q(x), \fall x.P(x)\ria R(x) $\}$ $\vdash$ \ex x.R(x)\ \andd\ Q(x) \\
+		\end{enumerate}
+        
+        \vspace{80pt}
+        
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{(\land -E)}] 
+                	{Q(\alpha)}
+                    {\infer[_{(\exists -E)}]
+                    	{P(\alpha)\ \land \ Q(\alpha)}
+                    	{\infer[_{(\textcolor{red}{ID})}]
+                        	{\exists x.P(x)\ \land \ Q(\alpha)}
+                            {}
+                        }
+                    }
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    \begin{frame}[fragile]
+    
+    	\begin{enumerate}[d)]
+			\item $\{$ \ex x.P(x)\ria \nao Q(x), \fall x.P(x)\ria R(x) $\}$ $\vdash$ \ex x.R(x)\ \andd\ Q(x) \\
+		\end{enumerate}
+        
+        \vspace{50pt}
+        
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{(\exists -I)}]
+            	{\exists  x. R(x)\ \land\ Q(x)}
+            	{\infer[_{(\land -I)}] 
+                	{R(\alpha)\ \land\ Q(\alpha)}
+                	{\infer[_{(\to -I)}]
+            			{R(\alpha)}
+            			{\infer[_{(\forall -E)}]
+                			{P(\alpha) \rightarrow R(\alpha)} 
+                    		{\infer[_{(ID)}]
+                    			{\forall x.P(x)\to R(x)}
+                    			{}
+                    		}  
+                		\infer[_{(\land -E)}] 
+                			{P(\alpha)}
+                    		{\infer[_{(\exists -E)}]
+                    			{P(\alpha)\ \land \ Q(\alpha)}
+                    			{\infer[_{(ID)}]
+                        			{\exists x.P(x)\ \land \ Q(\alpha)}
+                            		{}
+                        		}
+                    		}
+                		}
+                     \infer[_{(\land -E)}] 
+                		{Q(\alpha)}
+                    	{\infer[_{(\exists -E)}]
+                    		{P(\alpha)\ \land \ Q(\alpha)}
+                    		{\infer[_{(ID)}]
+                        		{\exists x.P(x)\ \land \ Q(\alpha)}
+                            	{}
+                        	}
+                    	}
+                    }
+                }
+        
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+\end{document}
