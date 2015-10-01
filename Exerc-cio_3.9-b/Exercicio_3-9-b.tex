@@ -1,0 +1,528 @@
+\documentclass[aspectratio=43]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+%\usepackage{tikz}
+\usepackage{graphics,amssymb,amsfonts,amsmath}
+%\usepackage{amstext}
+%\usepackage{amssymb}
+%\usepackage{stmaryrd}
+%\usepackage{fullpage}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{proof}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{setspace}
+\usepackage{color}
+
+
+\usetheme{CambridgeUS}
+% \usetheme{Pittsburgh}
+\usecolortheme{beaver}
+\usefonttheme[onlymath]{serif}
+\beamertemplatenavigationsymbolsempty
+
+% Colocando numero de paginas no slide
+%\setbeamertemplate{footline}[frame number]
+
+\newcommand{\ria}{$\rightarrow$}
+\newcommand{\Ria}{$\Rightarrow$}
+\newcommand{\fall}{$\forall$}
+\newcommand{\ex}{$\exists$}
+\newcommand{\nao}{$\neg$}
+\newcommand{\nex}{\nao\ex}
+\newcommand{\nfall}{\nao\fall}
+\newcommand{\andd}{$\wedge$}
+\newcommand{\orr}{$\vee$}
+\newcommand{\gam}{$\Gamma$}
+
+\title[\sc{Resolu\c c\~ao}]{Resolu\c c\~ao 3.9}
+\author[Guilherme Baumgratz Figueiroa]{Guilherme Baumgratz Figueiroa}
+\institute[UFOP]{Universidade Federal de Ouro Preto} % opcional
+\date{}
+
+\begin{document}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	\section{Exercic\'io 9}
+	
+	\begin{frame}%\frametitle{Exercic\'io}
+    
+    	\begin{enumerate}[1.]
+			\item Prove os seguintes sequentes usando dedu\c c\~ao natural: \\
+		\end{enumerate}
+				
+	\end{frame}
+    \subsection{b)}
+    
+	\begin{frame}[fragile]
+    	
+    	\begin{enumerate}[b)]
+			
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x.P(x)\ \andd\ Q(x) \\ 
+			
+		\end{enumerate}
+        \vspace{100pt}
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{}]
+            {$\nex$  x. P(x)\ $\andd$\ Q(x)}
+            {}
+        
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    \begin{frame}[fragile]
+    	
+    	\begin{enumerate}[b)]
+			
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x.P(x)\ \andd\ Q(x) \\ 
+			
+		\end{enumerate}
+        \textcolor{red}{\{\ex  x. P(x)\ \andd\ Q(x)\}}
+        \vspace{95pt}
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{(\textcolor{red}{Contr})}]
+            {$\nex$  x. P(x)\ $\andd$\ Q(x)}
+            {\textcolor{red}{\bot}}
+        
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    \begin{frame}[fragile]
+    	
+    	\begin{enumerate}[b)]
+			
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x.P(x)\ \andd\ Q(x) \\ 
+			
+		\end{enumerate}
+        \{\ex  x. P(x)\ \andd\ Q(x)\}
+        \vspace{95pt}
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{(Contr)}]
+            {$\nex$  x. P(x)\ $\andd$\ Q(x)}
+            {\infer[_{(\textcolor{red}{\land-I})}] 
+            	{\bot}
+                { \textcolor{red}{ Q(b) \hspace{35pt} \neg Q(b)}}
+        	}
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    \begin{frame}[fragile]
+    	
+    	\begin{enumerate}[b)]
+			
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x.P(x)\ \andd\ Q(x) \\ 
+			
+		\end{enumerate}
+        \{\ex  x. P(x)\ \andd\ Q(x)\}
+        \vspace{100pt}
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{(Contr)}]
+            {$\nex$  x. P(x)\ $\andd$\ Q(x)}
+            {\infer[_{(And-I)}] 
+            	{\bot}
+                {\infer[_{()}]
+                	{Q(b)}
+                    {\textcolor{red}{I}}
+                \hspace{35pt} 
+                \infer[_{()}]
+                	{$\nao$Q(b)}
+                    {\textcolor{red}{II}}
+                }
+        	}
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    \subsection{b) (I)}
+    
+    \begin{frame}[fragile]
+    	
+    	\begin{enumerate}[b)]
+			
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x.P(x)\ \andd\ Q(x) \\ 
+			
+		\end{enumerate}
+        \{\ex  x. P(x)\ \andd\ Q(x)\}
+        \vspace{100pt}
+        \[
+        \begin{array}{c}
+		
+        	\textcolor{red}{
+            \infer[_{()}]
+            {Q(b)}
+            {}
+            }
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    \begin{frame}[fragile]
+    	
+    	\begin{enumerate}[b)]
+			
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x.P(x)\ \andd\ Q(x) \\ 
+			
+		\end{enumerate}
+        \{\ex  x. P(x)\ \andd\ Q(x)\}
+        \vspace{95pt}
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{(\textcolor{red}{\land-E})}]
+            {Q(b)}
+            {\textcolor{red}{P(b)\ \wedge \ Q(b)}}
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    \begin{frame}[fragile]
+    	
+    	\begin{enumerate}[b)]
+			
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x.P(x)\ \andd\ Q(x) \\ 
+			
+		\end{enumerate}
+        \{\ex  x. P(x)\ \andd\ Q(x)\}
+        \vspace{90pt}
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{(\land-E)}]
+            {Q(b)}
+            {\infer[_{(\textcolor{red}{\exists-E})}]
+                {P(b)\ $\andd$\ Q(b)}
+            	{\textcolor{red}{\exists x.P(x)\ \wedge\ Q(x)} \hspace{20pt} \textcolor{red}{P(b)\ \wedge\ Q(b)}}
+            }
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    \begin{frame}[fragile]
+    	
+    	\begin{enumerate}[b)]
+			
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x.P(x)\ \andd\ Q(x) \\ 
+			
+		\end{enumerate}
+        \{\ex  x. P(x)\ \andd\ Q(x)\}
+        \vspace{85pt}
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{(\land-E)}]
+            {Q(b)}
+            {\infer[_{(\exists-E})]
+                {P(b)\ $\andd$\ Q(b)}
+            	{\infer[_{(\textcolor{red}{ID})}] 
+                	{\exists x.P(x)\ \wedge\ Q(x)}
+                    {}
+               	\hspace{20pt} 
+                P(b)\ \wedge\ Q(b)
+                }
+            }
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    \begin{frame}[fragile]
+    	
+    	\begin{enumerate}[b)]
+			
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x.P(x)\ \andd\ Q(x) \\ 
+			
+		\end{enumerate}
+        \{\ex  x. P(x)\ \andd\ Q(x), \textcolor{red}{\" \ex x.P(x)\ \andd \ Q(x) \"\ } \}
+        \vspace{85pt}
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{(\land-E)}]
+            {Q(b)}
+            {\infer[_{(\exists-E})]
+                {P(b)\ $\andd$\ Q(b)}
+            	{\infer[_{(ID)}] 
+                	{\exists x.P(x)\ \wedge\ Q(x)}
+                    {}
+               	\hspace{20pt} 
+                \infer[_{(\textcolor{red}{\exists -E})}] 
+                	{P(b)\ \wedge\ Q(b)}
+                    {\textcolor{red}{\exists x.P(x)\ \wedge \ Q(x)}}
+                }
+            }
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    \subsection{b) (II)}
+    
+    \begin{frame}[fragile]
+    	
+    	\begin{enumerate}[b)]
+			
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x.P(x)\ \andd\ Q(x) \\ 
+			
+		\end{enumerate}
+        \{\ex  x. P(x)\ \andd\ Q(x)\}
+        \vspace{100pt}
+        \[
+        \begin{array}{c}
+		
+        	\textcolor{red}{
+            \infer[_{()}]
+            {$\nao$ Q(b)}
+            {}
+            }
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    \begin{frame}[fragile]
+    	
+    	\begin{enumerate}[b)]
+			
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex x.P(x)\ \andd\ Q(x) \\ 
+			
+		\end{enumerate}
+        \{\ex  x. P(x)\ \andd\ Q(x)\}
+        \vspace{95pt}
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{(\textcolor{red}{\to-E})}]
+            {$\nao$ Q(b)}
+            {\textcolor{red}{
+            P(b) \rightarrow \neg Q(b) 
+            \hspace{35pt}
+            P(b)
+            }
+            }
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    \begin{frame}[fragile]
+    	
+    	\begin{enumerate}[b)]
+			
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x.P(x)\ \andd\ Q(x) \\ 
+			
+		\end{enumerate}
+        \{\ex  x. P(x)\ \andd\ Q(x)\}
+        \vspace{90pt}
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{(\to-E)}]
+            {$\nao$ Q(b)}
+            {\infer[_{(\textcolor{red}{\forall-E})}] 
+            	{P(b) $\ria$ $\nao$ Q(b)}
+               	{\textcolor{red}{\forall x.P(x)\rightarrow \neg Q(x)}} 
+            P(b)
+            }
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    \begin{frame}[fragile]
+    	
+    	\begin{enumerate}[b)]
+			
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x.P(x)\ \andd\ Q(x) \\ 
+			
+		\end{enumerate}
+        \{\ex  x. P(x)\ \andd\ Q(x)\}
+        \vspace{90pt}
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{(\to-E)}]
+            {$\nao$ Q(b)}
+            {\infer[_{(\forall-E)}] 
+            	{P(b) $\ria$ $\nao$ Q(b)}
+               	{\infer[_{(\textcolor{red}{ID})}]
+                	{\forall x.P(x)\to \neg Q(x)}
+                    {}
+                }
+            P(b)
+            }
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    \begin{frame}[fragile]
+    	
+    	\begin{enumerate}[b)]
+			
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x.P(x)\ \andd\ Q(x) \\ 
+			
+		\end{enumerate}
+        \{\ex  x. P(x)\ \andd\ Q(x)\}
+        \vspace{90pt}
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{(\to-E)}]
+            {$\nao$ Q(b)}
+            {\infer[_{(\forall-E)}] 
+            	{P(b) $\ria$ $\nao$ Q(b)}
+               	{\infer[_{(ID)}]
+                	{\forall x.P(x)\to \neg Q(x)}
+                    {}
+                } 
+            \infer[_{(\textcolor{red}{\land-E})}] 
+                {P(b)} 
+                {\textcolor{red}{P(b)\ \wedge\ Q(b)}}
+            }
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    
+    \begin{frame}[fragile]
+    	
+    	\begin{enumerate}[b)]
+			
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x.P(x)\ \andd\ Q(x) \\ 
+			
+		\end{enumerate}
+        \{\ex  x. P(x)\ \andd\ Q(x)\}
+        \vspace{90pt}
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{(\to-E)}]
+            {$\nao$ Q(b)}
+            {\infer[_{(\forall-E)}] 
+            	{P(b) $\ria$ $\nao$ Q(b)}
+               	{\infer[_{(ID)}]
+                	{\forall x.P(x)\to \neg Q(x)}
+                    {}
+                } 
+            \infer[_{(\land-E)}] 
+                {P(b)} 
+                {\infer[_{(\textcolor{red}{\exists-E})}] 
+                        	{P(b)\ $\andd$\ Q(b)}
+                        	{\textcolor{red}{\exists x.P(x)\ \wedge\ Q(x)}}
+                }
+            }
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    \begin{frame}[fragile]
+    	
+    	\begin{enumerate}[b)]
+			
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x.P(x)\ \andd\ Q(x) \\ 
+			
+		\end{enumerate}
+        \{\ex  x. P(x)\ \andd\ Q(x)\}
+        \vspace{90pt}
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{(\to-E)}]
+            {$\nao$ Q(b)}
+            {\infer[_{(\forall-E)}] 
+            	{P(b) $\ria$ $\nao$ Q(b)}
+               	{\infer[_{(ID)}]
+                	{\forall x.P(x)\to \neg Q(x)}
+                    {}
+                }  
+            \infer[_{(\land-E)}] 
+                {P(b)} 
+                {\infer[_{(\exists-E)}] 
+                        	{P(b)\ $\andd$\ Q(b)}
+                        	{\infer[_{(\textcolor{red}{ID})}]
+                            	{\exists x.P(x)\ \wedge\ Q(x)}
+                            	{}
+                            }
+                }
+            }
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+    \subsection{b)}
+        
+	\begin{frame}[fragile]
+    
+    	\begin{enumerate}[b)]
+			
+			\item $\{$ \fall P(x)\ria \nao Q(x) $\}$ $\vdash$ \nex  x.P(x)\ \andd\ Q(x) \\ 
+			
+		\end{enumerate}
+        \vspace{50pt}
+		\[
+        \begin{array}{c}
+		\infer[_{(C)}]
+			{$\nex$ x.P(x)\ $\andd$\ Q(x)}
+			{\infer[_{(\land-I)}] 
+            	{\bot}
+                {\infer[_{(\land-E)}] 
+                	{Q(b)}
+                    {\infer[_{(\exists-E)}]
+                    	{P(b)\ $\andd$\ Q(b)}
+                        {\infer[_{(ID)}] 
+                			{\exists x.P(x)\ \wedge\ Q(x)}
+                    		{}
+                    	}
+                	\infer[_{(\to-E)}] 
+                		{$\nao$ Q(b)}
+                		{\infer[_{(\forall-E)}] 
+                    		{P(b) $\ria$ $\nao$ Q(b)}
+                    		{\infer[_{(ID)}]
+                				{\forall x.P(x)\to \neg Q(x)}
+                    			{}
+                			}
+                    	\infer[_{(\land-E)}] 
+                    		{P(b)}
+                        	{\infer[_{(\exists-E)}] 
+                        		{P(b)\ $\andd$\ Q(b)}
+                        		{\infer[_{(ID)}]
+                            		{\exists x.P(x)\ \wedge\ Q(x)}
+                            		{}
+                            	}
+                        	}
+                    	}
+                	}
+            	}
+            }
+		\end{array}
+        \]
+		
+	\end{frame}
+	
+\end{document}
+
