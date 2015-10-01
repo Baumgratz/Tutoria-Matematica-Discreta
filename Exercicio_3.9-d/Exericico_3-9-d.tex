@@ -184,7 +184,7 @@
         \[
         \begin{array}{c}
 		
-        	\infer[_{(\textcolor{red}{\to -I})}]
+        	\infer[_{(\textcolor{red}{\to -E})}]
             	{R(\alpha)}
             	{\textcolor{red}{P(\alpha) \rightarrow R(\alpha)} \hspace{35pt} \textcolor{red}{P(\alpha)}}
 		\end{array}
@@ -205,7 +205,7 @@
         \[
         \begin{array}{c}
 		
-        	\infer[_{(\to -I)}]
+        	\infer[_{(\to -E)}]
             	{R(\alpha)}
             	{\infer[_{(\textcolor{red}{\forall -E})}]
                 	{P(\alpha) \rightarrow R(\alpha)} 
@@ -229,7 +229,7 @@
         \[
         \begin{array}{c}
 		
-        	\infer[_{(\to -I)}]
+        	\infer[_{(\to -E)}]
             	{R(\alpha)}
             	{\infer[_{(\forall -E)}]
                 	{P(\alpha) \rightarrow R(\alpha)} 
@@ -256,7 +256,7 @@
         \[
         \begin{array}{c}
 		
-        	\infer[_{(\to -I)}]
+        	\infer[_{(\to -E)}]
             	{R(\alpha)}
             	{\infer[_{(\forall -E)}]
                 	{P(\alpha) \rightarrow R(\alpha)} 
@@ -264,8 +264,7 @@
                     	{\forall x.P(x)\to R(x)}
                     	{}
                     }  
-            	\hspace{35pt}
-                \infer[_{(\textcolor{red}{\land -E})}] 
+            	\infer[_{(\textcolor{red}{\land -E})}] 
                 	{P(\alpha)}
                     {\textcolor{red}{P(\alpha)\ \land \ Q(\alpha)}}
                 }
@@ -285,7 +284,7 @@
         \[
         \begin{array}{c}
 		
-        	\infer[_{(\to -I)}]
+        	\infer[_{(\to -E)}]
             	{R(\alpha)}
             	{\infer[_{(\forall -E)}]
                 	{P(\alpha) \rightarrow R(\alpha)} 
@@ -293,12 +292,14 @@
                     	{\forall x.P(x)\to R(x)}
                     	{}
                     }  
-            	\hspace{35pt}
-                \infer[_{(\land -E)}] 
+            	\infer[_{(\land -E)}] 
                 	{P(\alpha)}
                     {\infer[_{(\textcolor{red}{\exists -E})}]
                     	{P(\alpha)\ \land \ Q(\alpha)}
-                    	{\textcolor{red}{\exists x.P(x)\ \land \ Q(\alpha)}}
+                    	{\textcolor{red}{\exists x.P(x)\ \land \ Q(\alpha)}
+                        \hspace{10pt}
+                        \textcolor{red}{P(\alpha)\ \land \ Q(\alpha)}
+                        }
                     }
                 }
 		\end{array}
@@ -317,7 +318,7 @@
         \[
         \begin{array}{c}
 		
-        	\infer[_{(\to -I)}]
+        	\infer[_{(\to -E)}]
             	{R(\alpha)}
             	{\infer[_{(\forall -E)}]
                 	{P(\alpha) \rightarrow R(\alpha)} 
@@ -325,14 +326,15 @@
                     	{\forall x.P(x)\to R(x)}
                     	{}
                     }  
-            	\hspace{35pt}
-                \infer[_{(\land -E)}] 
+            	\infer[_{(\land -E)}] 
                 	{P(\alpha)}
                     {\infer[_{(\exists -E)}]
                     	{P(\alpha)\ \land \ Q(\alpha)}
                     	{\infer[_{(\textcolor{red}{ID})}]
                         	{\exists x.P(x)\ \land \ Q(\alpha)}
                             {}
+                        \hspace{10pt}
+                        P(\alpha)\ \land \ Q(\alpha)
                         }
                     }
                 }
@@ -341,6 +343,44 @@
         
 	\end{frame}
     
+    \begin{frame}[fragile]
+    
+    	\begin{enumerate}[d)]
+			\item $\{$ \ex x.P(x)\ria \nao Q(x), \fall x.P(x)\ria R(x) $\}$ $\vdash$ \ex x.R(x)\ \andd\ Q(x) \\
+		\end{enumerate}
+        
+        \vspace{65pt}
+        
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{(\to -E)}]
+            	{R(\alpha)}
+            	{\infer[_{(\forall -E)}]
+                	{P(\alpha) \rightarrow R(\alpha)} 
+                    {\infer[_{(ID)}]
+                    	{\forall x.P(x)\to R(x)}
+                    	{}
+                    }  
+            	\infer[_{(\land -E)}] 
+                	{P(\alpha)}
+                    {\infer[_{(\exists -E)}]
+                    	{P(\alpha)\ \land \ Q(\alpha)}
+                    	{\infer[_{(ID)}]
+                        	{\exists x.P(x)\ \land \ Q(\alpha)}
+                            {}
+                        \infer[_{(\textcolor{red}{\exists -E})}] 
+                        	{P(\alpha)\ \land \ Q(\alpha)}
+                            {\textcolor{red}{\exists x.P(x)\ \land \ Q(\alpha)}}
+                        }
+                    }
+                }
+		\end{array}
+        \]
+        
+	\end{frame}
+    
+  
     \subsection{d) II}
     
     \begin{frame}[fragile]
@@ -398,7 +438,10 @@
                 	{Q(\alpha)}
                     {\infer[_{(\textcolor{red}{\exists -E})}]
                     	{P(\alpha)\ \land \ Q(\alpha)}
-                    	{\textcolor{red}{\exists x.P(x)\ \land \ Q(\alpha)}}
+                    	{\textcolor{red}{\exists x.P(x)\ \land \ Q(\alpha)}
+                        \hspace{10pt}
+                        \textcolor{red}{P(\alpha)\ \land \ Q(\alpha)}
+                        }
                     }
 		\end{array}
         \]
@@ -423,6 +466,8 @@
                     	{\infer[_{(\textcolor{red}{ID})}]
                         	{\exists x.P(x)\ \land \ Q(\alpha)}
                             {}
+                        \hspace{10pt}
+                        P(\alpha)\ \land \ Q(\alpha)
                         }
                     }
 		\end{array}
@@ -436,48 +481,54 @@
 			\item $\{$ \ex x.P(x)\ria \nao Q(x), \fall x.P(x)\ria R(x) $\}$ $\vdash$ \ex x.R(x)\ \andd\ Q(x) \\
 		\end{enumerate}
         
-        \vspace{50pt}
+        \vspace{80pt}
         
         \[
         \begin{array}{c}
 		
-        	\infer[_{(\exists -I)}]
-            	{\exists  x. R(x)\ \land\ Q(x)}
-            	{\infer[_{(\land -I)}] 
-                	{R(\alpha)\ \land\ Q(\alpha)}
-                	{\infer[_{(\to -I)}]
-            			{R(\alpha)}
-            			{\infer[_{(\forall -E)}]
-                			{P(\alpha) \rightarrow R(\alpha)} 
-                    		{\infer[_{(ID)}]
-                    			{\forall x.P(x)\to R(x)}
-                    			{}
-                    		}  
-                		\infer[_{(\land -E)}] 
-                			{P(\alpha)}
-                    		{\infer[_{(\exists -E)}]
-                    			{P(\alpha)\ \land \ Q(\alpha)}
-                    			{\infer[_{(ID)}]
-                        			{\exists x.P(x)\ \land \ Q(\alpha)}
-                            		{}
-                        		}
-                    		}
-                		}
-                     \infer[_{(\land -E)}] 
-                		{Q(\alpha)}
-                    	{\infer[_{(\exists -E)}]
-                    		{P(\alpha)\ \land \ Q(\alpha)}
-                    		{\infer[_{(ID)}]
-                        		{\exists x.P(x)\ \land \ Q(\alpha)}
-                            	{}
-                        	}
-                    	}
+        	\infer[_{(\land -E)}] 
+                	{Q(\alpha)}
+                    {\infer[_{(\exists -E)}]
+                    	{P(\alpha)\ \land \ Q(\alpha)}
+                    	{\infer[_{(ID)}]
+                        	{\exists x.P(x)\ \land \ Q(\alpha)}
+                            {}
+                        \infer[_{(\textcolor{red}{\exists -E})}] 
+                        	{P(\alpha)\ \land \ Q(\alpha)}
+                            {\textcolor{red}{\exists x.P(x)\ \land \ Q(\alpha)}}
+                        }
                     }
-                }
-        
 		\end{array}
         \]
         
 	\end{frame}
     
+     \begin{frame}[fragile]
+    
+    	\begin{enumerate}[d)]
+			\item $\{$ \ex x.P(x)\ria \nao Q(x), \fall x.P(x)\ria R(x) $\}$ $\vdash$ \ex x.R(x)\ \andd\ Q(x) \\
+		\end{enumerate}
+        
+        \vspace{80pt}
+        
+        \[
+        \begin{array}{c}
+		
+        	\infer[_{(\land -E)}] 
+                	{Q(\alpha)}
+                    {\infer[_{(\exists -E)}]
+                    	{P(\alpha)\ \land \ Q(\alpha)}
+                    	{\infer[_{(ID)}]
+                        	{\exists x.P(x)\ \land \ Q(\alpha)}
+                            {}
+                        \infer[_{(\textcolor{red}{\exists -E})}] 
+                        	{P(\alpha)\ \land \ Q(\alpha)}
+                            {\textcolor{red}{\exists x.P(x)\ \land \ Q(\alpha)}}
+                        }
+                    }
+		\end{array}
+        \]
+        
+	\end{frame}
+        
 \end{document}
