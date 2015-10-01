@@ -39,14 +39,14 @@
 	3.Considerando como universo de discurso o conjunto de alunos e professores de uma universidade e os seguintes predicados:
 	\begin{table}[h]
 		\begin{tabular}{|c|c|}
-			{\em A(x, y)} & {\em x} admira {\em y} \\
-			{\em S(x, y)} & {\em x} estava presente em {\em y} \\
-			{\em P(x)} & {\em x} \'e professor \\ 
-			{\em E(x)} & {\em x} \'e estudante \\
-			{\em L(x)} & {\em x} \'e aula \\
+			$A(x, y)$ & $x$ admira $y$ \\
+			$S(x, y)$ & $x$ estava presente em $y$ \\
+			$P(x)$ & $x$ \'e professor \\ 
+			$E(x)$ & $x$ \'e estudante \\
+			$L(x)$ & $x$ \'e aula \\
 		\end{tabular}
 	\end{table}
-	e a constante {\em Maria}, representa as seguintes sentenças como fórmulas da lógica de predicados.
+	e a constante $Maria$, representa as seguintes sentenças como fórmulas da lógica de predicados.
 	
 \end{frame}
 
@@ -55,17 +55,17 @@
 		
 		\item Maria admira todo professor \\
 		\pause
-		Resposta: {\em \fall x.P(x) \ria A(Maria, x)} \\
+		Resposta: $\forall x.P(x) \rightarrow A(Maria, x)$\\
 		\pause
 		
 		\item Algum professor admira Maria \\
 		\pause
-		Resposta: {\em \ex x.P(x) \ria A(x, Maria)} \\
+		Resposta: $\exists x.P(x) \rightarrow A(x, Maria)$ \\
 		\pause
 		
 		\item Maria admira a si mesma \\
 		\pause
-		Resposta: {\em A(Maria, Maria)} \\
+		Resposta: $ A(Maria, Maria)$ \\
 				
 	\end{enumerate}
 		
@@ -75,17 +75,17 @@
 	\begin{enumerate}[d)]
 		\item Nenhum estudante estava presente em todas as aulas \\
 		\pause
-		Resposta: {\em \nao\ex x.E(x).\fall y.L(y).S(x, y)} \\
+		Resposta: $\neg\exists x.E(x).\forall y.L(y).S(x, y)$ \\
 		\pause
 		
 		\item Nenhuma aula teve a presen\c ca de todos os estudantes \\
 		\pause
-		Resposta:  {\em \nex x.L(x).\fall y.E(y).S(y, x)}
+		Resposta:  $\neg\exists x.L(x).\forall y.E(y).S(y, x)$
 		\pause
 		
 		\item Nenhuma aula teve a presen\c ca de qualquer estudantes \\
 		\pause
-		Resposta:  {\em \nex x.L(x).\nex y.E(y).S(y, x)}
+		Resposta:  $\neg\exists x.L(x).\neg\exists y.E(y).S(y, x)$
 	\end{enumerate}
 \end{frame}
 	
