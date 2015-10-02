@@ -296,7 +296,7 @@
                 	{P(\alpha)}
                     {\infer[_{(\textcolor{red}{\exists -E})}]
                     	{P(\alpha)\ \land \ Q(\alpha)}
-                    	{\textcolor{red}{\exists x.P(x)\ \land \ Q(\alpha)}
+                    	{\textcolor{red}{\exists x.P(x)\ \land \ Q(x)}
                         \hspace{10pt}
                         \textcolor{red}{P(\alpha)\ \land \ Q(\alpha)}
                         }
@@ -331,7 +331,7 @@
                     {\infer[_{(\exists -E)}]
                     	{P(\alpha)\ \land \ Q(\alpha)}
                     	{\infer[_{(\textcolor{red}{ID})}]
-                        	{\exists x.P(x)\ \land \ Q(\alpha)}
+                        	{\exists x.P(x)\ \land \ Q(x)}
                             {}
                         \hspace{10pt}
                         P(\alpha)\ \land \ Q(\alpha)
@@ -367,11 +367,11 @@
                     {\infer[_{(\exists -E)}]
                     	{P(\alpha)\ \land \ Q(\alpha)}
                     	{\infer[_{(ID)}]
-                        	{\exists x.P(x)\ \land \ Q(\alpha)}
+                        	{\exists x.P(x)\ \land \ Q(x)}
                             {}
                         \infer[_{(\textcolor{red}{\exists -E})}] 
                         	{P(\alpha)\ \land \ Q(\alpha)}
-                            {\textcolor{red}{\exists x.P(x)\ \land \ Q(\alpha)}}
+                            {\textcolor{red}{\exists x.P(x)\ \land \ Q(x)}}
                         }
                     }
                 }
@@ -438,7 +438,7 @@
                 	{Q(\alpha)}
                     {\infer[_{(\textcolor{red}{\exists -E})}]
                     	{P(\alpha)\ \land \ Q(\alpha)}
-                    	{\textcolor{red}{\exists x.P(x)\ \land \ Q(\alpha)}
+                    	{\textcolor{red}{\exists x.P(x)\ \land \ Q(x)}
                         \hspace{10pt}
                         \textcolor{red}{P(\alpha)\ \land \ Q(\alpha)}
                         }
@@ -464,7 +464,7 @@
                     {\infer[_{(\exists -E)}]
                     	{P(\alpha)\ \land \ Q(\alpha)}
                     	{\infer[_{(\textcolor{red}{ID})}]
-                        	{\exists x.P(x)\ \land \ Q(\alpha)}
+                        	{\exists x.P(x)\ \land \ Q(x)}
                             {}
                         \hspace{10pt}
                         P(\alpha)\ \land \ Q(\alpha)
