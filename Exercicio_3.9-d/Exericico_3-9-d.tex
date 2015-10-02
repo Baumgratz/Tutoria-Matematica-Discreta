@@ -36,7 +36,7 @@
 \newcommand{\orr}{$\vee$}
 \newcommand{\gam}{$\Gamma$}
 
-\title[\sc{Resolu\c c\~ao}]{Resolu\c c\~ao 3.9}
+\title[\sc{Resolu\c c\~ao}]{Resolu\c c\~ao 3.9-d}
 \author[Guilherme Baumgratz Figueiroa]{Guilherme Baumgratz Figueiroa}
 \institute[UFOP]{Universidade Federal de Ouro Preto} % opcional
 \date{}
@@ -475,40 +475,12 @@
         
 	\end{frame}
     
-    \begin{frame}[fragile]
-    
-    	\begin{enumerate}[d)]
-			\item $\{$ \ex x.P(x)\ria \nao Q(x), \fall x.P(x)\ria R(x) $\}$ $\vdash$ \ex x.R(x)\ \andd\ Q(x) \\
-		\end{enumerate}
-        
-        \vspace{80pt}
-        
-        \[
-        \begin{array}{c}
-		
-        	\infer[_{(\land -E)}] 
-                	{Q(\alpha)}
-                    {\infer[_{(\exists -E)}]
-                    	{P(\alpha)\ \land \ Q(\alpha)}
-                    	{\infer[_{(ID)}]
-                        	{\exists x.P(x)\ \land \ Q(\alpha)}
-                            {}
-                        \infer[_{(\textcolor{red}{\exists -E})}] 
-                        	{P(\alpha)\ \land \ Q(\alpha)}
-                            {\textcolor{red}{\exists x.P(x)\ \land \ Q(\alpha)}}
-                        }
-                    }
-		\end{array}
-        \]
-        
-	\end{frame}
-    
      \begin{frame}[fragile]
     
     	\begin{enumerate}[d)]
-			\item $\{$ \ex x.P(x)\ria \nao Q(x), \fall x.P(x)\ria R(x) $\}$ $\vdash$ \ex x.R(x)\ \andd\ Q(x) \\
+			\item $\{$ $\exists x.P(x)\land Q(x), \forall x.P(x)\to R(x)$ $\}$ $\vdash$ $\exists x.R(x)\ \land\ Q(x) $\\
 		\end{enumerate}
-        
+        \textcolor{red}{$\{$ $\exists x.P(x)\ \land \ Q(x)$ $\}$}
         \vspace{80pt}
         
         \[
@@ -519,11 +491,11 @@
                     {\infer[_{(\exists -E)}]
                     	{P(\alpha)\ \land \ Q(\alpha)}
                     	{\infer[_{(ID)}]
-                        	{\exists x.P(x)\ \land \ Q(\alpha)}
+                        	{\exists x.P(x)\ \land \ Q(x)}
                             {}
                         \infer[_{(\textcolor{red}{\exists -E})}] 
                         	{P(\alpha)\ \land \ Q(\alpha)}
-                            {\textcolor{red}{\exists x.P(x)\ \land \ Q(\alpha)}}
+                            {\textcolor{red}{\exists x.P(x)\ \land \ Q(x)}}
                         }
                     }
 		\end{array}
