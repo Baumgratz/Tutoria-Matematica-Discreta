@@ -1,0 +1,208 @@
+\documentclass[aspectratio=43]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+%\usepackage{tikz}
+%\usepackage{graphics,amssymb,amsfonts,amsmath}
+%\usepackage{amstext}
+%\usepackage{amssymb}
+%\usepackage{stmaryrd}
+%\usepackage{fullpage}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{proof}
+\usepackage{color}
+
+\usetheme{CambridgeUS}
+% \usetheme{Pittsburgh}
+\usecolortheme{beaver}
+\usefonttheme[onlymath]{serif}
+\beamertemplatenavigationsymbolsempty
+
+% Colocando numero de paginas no slide
+%\setbeamertemplate{footline}[frame number]
+
+\newcommand{\ria}{$\rightarrow$}
+\newcommand{\fall}{$\forall$}
+\newcommand{\ex}{$\exists$}
+\newcommand{\nao}{$\neg$}
+\newcommand{\nex}{\nao\ex}
+\newcommand{\nfall}{\nao\fall}
+\newcommand{\andd}{$\wedge$}
+\newcommand{\orr}{$\vee$}
+\newcommand{\gam}{$\Gamma$}
+\newcommand{\nat}{$\mathbb{N}$}
+\newcommand{\Nat}{\mathbb{N}}
+\newcommand{\inteiro}{$\mathbb{Z}$}
+\newcommand{\real}{$\mathbb{R}$}
+
+\title[\sc{Resolu\c c\~ao}]{Resolu\c c\~ao 3.7-1}
+\author[Guilherme Baumgratz Figueiroa]{Guilherme Baumgratz Figueiroa}
+\institute[UFOP]{Universidade Federal de Ouro Preto} % opcional
+\date{}
+
+\begin{document}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\section{Exercic\'io}
+
+	\begin{frame}[fragile]
+    \begin{enumerate}[1.]
+
+		\item Para cada uma das fórmulas a seguir, indique se ela é verdadeira ou false, quando o universo de discurso é cada um dos seguintes: \nat : conjunto dos n\'umeros naturais, \inteiro : conjunto dos n\'umeros inteiros e \real\ conjunto dos n\'umeros reais. Considere que os símbolos matemáticos possuem o significado usual.\\
+        \centering
+        \vspace{20pt}
+        \begin{tabular}{c|l|c|c|c|}
+
+        	\ & F\'ormula & \nat & \inteiro & \real \\\hline
+        	a & $\exists x.x^{2} = 2$ & \ & \ & \  \\
+        	b & $\forall x. \exists y. x^{2} = y$ & \ & \ & \  \\
+        	c & $\forall x. x \neq 0 \to \exists y.xy = 1 $ & \ & \ & \  \\
+        	d & $\exists x. \exists y.(x + 2y^{2} = 2) \land (2x + 4y = 5)$ & \ & \ & \  \\
+		\end{tabular}
+        
+	\end{enumerate}
+		
+	\end{frame}
+    
+    \subsection{DICA!!}
+	
+   	\begin{frame}[fragile]
+    
+    \centering
+    \huge \nat\ $\subset$ \inteiro\ $\subset$ \real
+
+	\end{frame}
+
+
+    \subsection{$\exists x.x^{2} = 2$}
+    
+    \begin{frame}[fragile]
+    
+    \begin{enumerate}[a)]
+		\item $\exists x.x^{2} = 2$
+	\end{enumerate}
+    \pause
+    \nat \ e \inteiro \\
+    ${x = 0 \Rightarrow x^2 = 0}$ \\
+    \pause
+    ${x = 1 \Rightarrow x^2 = 1}$ \\
+    \pause
+    ${x = 2 \Rightarrow x^2 = 4}$ \\
+    $\vdots$ \\
+	\pause
+    \vspace{5pt}
+    \real \\
+    ${x=\sqrt[2]{2} \Rightarrow x^2 = (\sqrt[2]{2})^2 \Rightarrow x^2 = 2}$ \\
+    \pause
+    Ent\~ao, $\exists x.x^{2} = 2$, pertence aos \real, por\'em n\~ao pertence aos \inteiro\ nem aos \nat .\\
+    
+	\end{frame}
+    
+    \subsection{$\forall x.\exists y. x^{2} = y$}
+    
+    \begin{frame}[fragile]
+    
+    \begin{enumerate}[b)]
+		\item $\forall x.\exists y. x^{2} = y$
+	\end{enumerate}
+    \pause
+    Nos n\'umeros naturais, ou o n\'umero \'e par, tal que 
+    \begin{center}
+    $\forall n. n \in \Nat \to \exists p.p \in \Nat .\ 2n = p$,
+	\end{center}
+    ou o n\'umero \' impar, tal que 
+    \begin{center}    
+    $\forall n. n \in \Nat \to \exists i.i \in \Nat .\ 2n +1 = i$,
+    \end{center}
+    ou \'e o n\'umero zero.\\
+    Sabendo disso, vamos para os casos:\\
+	
+	\end{frame}
+    
+    \begin{frame}[fragile]
+     \begin{enumerate}[b)]
+		\item $\forall x.\exists y. x^{2} = y$
+	\end{enumerate}
+    
+    Caso base ($x=0$): \\
+    \vspace{5pt}
+	${x = 0 \pause \Rightarrow x^2 = 0 \pause \Rightarrow 0 \in \Nat}$\\
+    \vspace{5pt}
+    \pause
+    Caso x par($x=2n$):\\
+    \vspace{5pt}
+    ${x = 2n \pause \Rightarrow x^2 = (2n)^2 \pause \Rightarrow x^2 = 4n^2 \pause \Rightarrow x^2 = 2(2n^2) \pause \rightarrow y = 2n^2 \pause \rightarrow x^2 = 2y}$\\
+    \vspace{5pt}
+    \pause
+    Caso x \'impar($x=2n+1$):\\
+    \vspace{5pt}
+    ${x = 2n+1 \pause\Rightarrow x^2 = (2n+1)^2 \pause \Rightarrow x^2 = 4n^2 + 4n + 1 \pause \Rightarrow}$\\
+    ${x^2 = 2(2n^2) + 2(2n) + 1 \pause \rightarrow y = 2n^2 \land z = 2n \pause\rightarrow}$\\
+    ${x^2 = (2y) + (2z +1)}$ \\
+    \vspace{5pt}
+    \pause
+    Portando, $\forall x.\exists y. x^{2} = y \ \in \Nat$ o que, consequentemente, faz a expressão pertencer ao \inteiro \ e ao \real  .
+
+	\end{frame}
+    
+    \subsection{$\forall x. x \neq 0 \to \exists y.xy = 1 $}
+    
+    \begin{frame}[fragile]
+    \begin{enumerate}[c)]
+		\item $\forall x. x \neq 0 \to \exists y.xy = 1 $
+	\end{enumerate}
+    \vspace{5pt}
+    \pause
+    Para que essa senten\c ca seja verdadeira, temos que fazer o $y$ seja o complemento de $x$,
+    ou seja $y = \frac{1}{x}$.\\
+    Sendo  $y = \frac{1}{x}$, então a sentença é verdadeira somente para o \real .
+	
+	\end{frame}
+    
+    \subsection{$\exists x. \exists y.(x + 2y^{2} = 2) \land (2x + 4y = 5)$}
+    
+    \begin{frame}
+	\begin{enumerate}[d)]
+		\item $\exists x. \exists y.(x + 2y^{2} = 2) \land (2x + 4y = 5)$
+	\end{enumerate}
+    \pause
+    \nat \ e \inteiro \\
+   	No \nat \ e no \inteiro, ele n\~ao consegui satisfazer $2x + 4y =5$.\\
+    Vejamos a tabela de valores:\\
+    \begin{center}
+
+    \begin{tabular}{c|c|c|c}
+		 \nat & \inteiro & $x$ & $y$ \\ 
+        \hline$-$ & x & $-3$ & \pause $\frac{11}{4}$\\
+        \hline$-$ & x & $-2$ & \pause $\frac{9}{4}$\\
+        \hline$-$ & x & $-1$ & \pause $\frac{7}{4}$\\
+        \hline x & x & $0$ & \pause $\frac{5}{4}$\\
+        \hline x & x & $1$ & \pause $\frac{3}{4}$\\
+        \hline x & x & $2$ & \pause $\frac{1}{4}$\\
+        \hline x & x & $3$ & \pause $-\frac{1}{4}$\\
+        
+	\end{tabular}
+	\end{center}
+      
+	\end{frame}
+    
+    \begin{frame}
+	\begin{enumerate}[d)]
+		\item $\exists x. \exists y.(x + 2y^{2} = 2) \land (2x + 4y = 5)$
+	\end{enumerate}
+    \real \\
+    Todos os valores anteriores testados estam no \real, por\'em nenhum deles funciona na outra form\'ula. Existe um \'unico valor que se aplica a forma, e ela foi descoberta usando sistema de duas equa\c c\~oes.\\
+    Os valores s\~ao:\\
+    \begin{center}
+
+    $x = \frac{3}{2}$\\
+    \vspace{10pt}
+    $y = \frac{1}{2}$
+    \end{center}
+	Ou seja, a express\~ao $\exists x. \exists y.(x + 2y^{2} = 2) \land (2x + 4y = 5)$ est\'a contido no \real.
+	\end{frame}
+    
+\end{document}
