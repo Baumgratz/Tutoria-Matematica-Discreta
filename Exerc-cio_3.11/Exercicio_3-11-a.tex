@@ -45,26 +45,58 @@
 \section{Exercic\'io}
 
 \begin{frame}%\frametitle{Exercic\'io}
-	1.Prove as seguintes equival\^encias utilizando regras alg\'ebricas para l\'ogica de predicado
+	\begin{enumerate}[1.]
+		\item Prove as seguintes equival\^encias utilizando regras alg\'ebricas para l\'ogica de predicado
+
 	\begin{enumerate}[a)]
 		
-		\item \fall P(x)\ria\nao Q(x) = \nex x.(P(x)\ \andd\ Q(x)) \\
+		\item $\forall x.P(x)\to\neg Q(x) = \neg\exists x.(P(x)\land Q(x))$ \\
 		
 	\end{enumerate}
 	
+	\end{enumerate}
 	Resposta:
 	\\
 	\centering
 	\pause
 	
 	\begin{tabular}{rcl}
-		\fall P(x)\ria\nao Q(x) & = & \nex x.(P(x)\ \andd\ Q(x))\\
+		$\forall x. P(x)\to\neg Q(x)$ & $\equiv$ & $\neg\exists x.P(x)\land Q(x)$\\
 		\pause
-		\nao \nao \fall P(x)\orr\nao Q(x) & = & \nex x.(P(x)\ \andd\ Q(x)) \\
+		$\neg \neg \forall x.P(x)\lor\neg Q(x)$  & $\equiv$ & $\neg\exists x.P(x)\land Q(x)$ \\
 		\pause
-		\nex x.\nao (\nao P(x)\orr\nao Q(x)) & = & \nex x.(P(x)\ \andd\ Q(x)) \\
+		$\neg\exists x.\neg (\neg P(x)\l\neg Q(x))$  & $\equiv$ & $\neg\exists x.P(x)\land Q(x)$ \\
 		\pause
-		\nex x. P(x) \andd\ Q(x) & = & \nex x.(P(x)\ \andd\ Q(x)) 
+		$\neg\exists x. P(x) \land Q(x)$  & $\equiv$ & $\neg\exists x.P(x)\land Q(x)$ 
+	\end{tabular}
+	
+	
+\end{frame}
+
+\begin{frame}%\frametitle{Exercic\'io}
+	\begin{enumerate}[1.]
+		\item Prove as seguintes equival\^encias utilizando regras alg\'ebricas para l\'ogica de predicado
+
+	\begin{enumerate}[a)]
+		
+		\item $\forall x.P(x)\to\neg Q(x) = \neg\exists x.(P(x)\land Q(x))$ \\
+		
+	\end{enumerate}
+	
+	\end{enumerate}
+	Resposta:
+	\\
+	\centering
+	\pause
+	
+	\begin{tabular}{rcl}
+		$\forall x.P(x)\to\neg Q(x)$ & $\equiv$ & $\neg\exists x.P(x)\land Q(x)$\\
+		\pause
+		$\forall x.P(x)\to\neg Q(x)$ & $\equiv$ & $\forall x.\neg (P(x)\land Q(x))$ \\
+		\pause
+		$\forall x.P(x)\to\neg Q(x)$ & $\equiv$ & $\forall x.\neg P(x)\lor \neg Q(x)$ \\
+		\pause
+		$\forall x.P(x)\to\neg Q(x)$ & $\equiv$ & $\forall x.P(x)\to \neg Q(x)$ 
 	\end{tabular}
 	
 	
